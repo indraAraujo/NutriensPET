@@ -1,11 +1,13 @@
 import React from 'react';
 import {Row} from './styles';
-import {Text} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import LogoSmall from '../LogoSmall/logoSmall';
 
 const Header = ({isHome = false}) => {
   return (
-    <Row>
-      <Text>opa</Text>
+    <Row isHome>
+      <Icon name="menu" size={32} color={isHome ? 'black' : 'white'} />
+      <LogoSmall />
     </Row>
   );
 };
