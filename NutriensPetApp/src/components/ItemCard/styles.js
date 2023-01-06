@@ -2,20 +2,21 @@ import styled from 'styled-components';
 import {View, Text, Image} from 'react-native';
 import {generateShadow} from '../../assets/generateShadow';
 
-export const Shadow = styled(View)({
-  width: '100%',
+export const Shadow = styled(View)(props => ({
+  width: props.width || '100%',
   ...generateShadow(8),
   backgroundColor: 'white',
   borderRadius: 10,
-  marginBottom: '15%',
-});
+  marginBottom: props.marginBottom || '15%',
+  marginTop: props.marginTop,
+}));
 
 export const Card = styled(View)(props => ({
   borderRadius: 10,
   width: '100%',
   backgroundColor: props.backgroundColor || 'white',
-  paddingHorizontal: '10%',
-  paddingVertical: '10%',
+  paddingHorizontal: props.paddingHorizontal || '10%',
+  paddingVertical: props.paddingVertical || '10%',
 }));
 
 export const Title = styled(Text)(() => ({
