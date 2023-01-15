@@ -4,13 +4,15 @@ import {AlertView, Body, ImportantInfo, Info} from './styles';
 import Screen from '../../components/Screen/screen';
 import {Card, Shadow} from '../../components/ItemCard/styles';
 import Alert from '../../components/Alert/alert';
+import Menu from '../../components/Menu/menu';
 
 const Water = () => {
+  const [showMenu, setShowMenu] = useState(false);
   const [showAlert, setShowAlert] = useState(true);
   return (
     <>
       <Screen isScrollable={true}>
-        <Header title="Água" />
+        <Header title="Água" setShowMenu={setShowMenu} />
         <Body>
           <Shadow
             marginTop="10%"
@@ -43,6 +45,7 @@ const Water = () => {
             eros quis semper tempor.
           </Info>
         </Body>
+        <Menu isOpen={showMenu} setShowModal={setShowMenu} />
       </Screen>
     </>
   );

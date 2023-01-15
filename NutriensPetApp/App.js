@@ -5,7 +5,7 @@ import Home from './src/screens/Home/home';
 import Water from './src/screens/Water/water';
 
 const App = () => {
-  return <Bowl />;
+  return <Home />;
 };
 
 export default App;

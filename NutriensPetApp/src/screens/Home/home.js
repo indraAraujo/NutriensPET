@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from '../../components/Header/header';
 import ItemCard from '../../components/ItemCard/itemCard';
 import {Body, Title} from './styles';
 import Screen from '../../components/Screen/screen';
+import Menu from '../../components/Menu/menu';
 
 const info = [
   {
@@ -29,10 +30,11 @@ const info = [
 ];
 
 const Home = () => {
+  const [showMenu, setShowMenu] = useState(false);
   return (
     <>
       <Screen isScrollable={true}>
-        <Header isHome />
+        <Header isHome setShowMenu={setShowMenu} />
         <Title>Atualizações</Title>
         <Body>
           {info?.map(item => (
@@ -45,6 +47,7 @@ const Home = () => {
             />
           ))}
         </Body>
+        <Menu isOpen={showMenu} setShowModal={setShowMenu} />
       </Screen>
     </>
   );
