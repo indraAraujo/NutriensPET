@@ -4,13 +4,16 @@ import {AlertView, Body, ImportantInfo, Info} from './styles';
 import Screen from '../../components/Screen/screen';
 import {Card, Shadow} from '../../components/ItemCard/styles';
 import Alert from '../../components/Alert/alert';
+import Menu from '../../components/Menu/menu';
 
 const Dispenser = () => {
+  const [showMenu, setShowMenu] = useState(false);
   const [showAlert, setShowAlert] = useState(true);
+
   return (
     <>
       <Screen isScrollable={true}>
-        <Header title="Alimentador" />
+        <Header title="Alimentador" setShowMenu={setShowMenu} />
         <Body>
           <Shadow
             marginTop="10%"
@@ -43,6 +46,7 @@ const Dispenser = () => {
             eros quis semper tempor.
           </Info>
         </Body>
+        <Menu isOpen={showMenu} setShowModal={setShowMenu} />
       </Screen>
     </>
   );
